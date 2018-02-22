@@ -1,6 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
-import Hello from "./Hello";
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import AppBar from 'material-ui/AppBar';
 
 const styles = {
   fontFamily: "sans-serif",
@@ -8,10 +9,12 @@ const styles = {
 };
 
 const App = () => (
-  <div style={styles}>
-    <Hello name="CodeSandbox" />
-    <h2>Start editing to see some magic happen {"\u2728"}</h2>
-  </div>
+  <MuiThemeProvider> 
+  <AppBar
+    title="Title"
+    iconClassNameRight="muidocs-icon-navigation-expand-more"
+  />
+  </MuiThemeProvider>
 );
 
 render(<App />, document.getElementById("root"));
